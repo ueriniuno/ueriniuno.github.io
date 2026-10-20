@@ -1,0 +1,86 @@
+---
+layout: default
+title: Home
+---
+
+<!-- ========== ABOUT ========== -->
+<div class="docs-section" id="about">
+  <h4>About</h4>
+  <p>
+    I am an M.S. student in the Department of Artificial Intelligence at Korea University,
+    advised by
+    <a class="about-link" href="https://jh-jeong.github.io/" target="_blank" rel="noopener noreferrer">Prof. Jongheon Jeong</a>
+    at the
+    <a class="about-link" href="https://tail.korea.ac.kr/" target="_blank" rel="noopener noreferrer">Trustworthy AI Lab</a>.
+  </p>
+  <p>
+    My research focuses on prompt optimization and controllable generative modeling, particularly for large language models and video generative models.
+    I am interested in developing efficient methods that enable generative models to adapt to diverse tasks and user intent.
+  </p>
+</div>
+
+<!-- ========== PUBLICATIONS ========== -->
+<div class="docs-section" id="publications">
+  <h4>Publications</h4>
+  <p class="publication-note">
+    (C: Conferences, J: Journal, W: Workshop, P: Preprint)
+  </p>
+
+  {% for paper in site.data.publications.papers %}
+    <div class="paper publication-card">
+      <div class="row">
+        {% if paper.thumbnail %}
+          <div class="four columns">
+            <img class="u-max-full-width publication-thumb" src="{{ paper.thumbnail | prepend: site.baseurl }}" alt="{{ paper.title }} thumbnail">
+          </div>
+        {% endif %}
+
+        <div class="{% if paper.thumbnail %}eight columns{% else %}twelve columns{% endif %}">
+          <p class="title"><b>{{ paper.title }}</b></p>
+          <p>{{ paper.authors }}</p>
+          <p><i>{{ paper.venue }}</i></p>
+          {% if paper.venue2 %}
+            <p><i>{{ paper.venue2 }}</i></p>
+          {% endif %}
+          <div class="paper-buttons">
+            {% if paper.paper_pdf %}
+              <a class="button" href="{{ paper.paper_pdf | prepend: site.baseurl }}" target="_blank">Paper</a>
+            {% endif %}
+            {% if paper.arxiv %}
+              <a class="button" href="{{ paper.arxiv }}" target="_blank">arXiv</a>
+            {% endif %}
+            {% if paper.website %}
+              <a class="button" href="{{ paper.website }}" target="_blank">Website</a>
+            {% endif %}
+            {% if paper.code %}
+              <a class="button" href="{{ paper.code }}" target="_blank">Code</a>
+            {% endif %}
+            {% if paper.slides %}
+              <a class="button" href="{{ paper.slides | prepend: site.baseurl }}" target="_blank">Slides</a>
+            {% endif %}
+            {% if paper.poster %}
+              <a class="button" href="{{ paper.poster | prepend: site.baseurl }}" target="_blank">Poster</a>
+            {% endif %}
+            {% if paper.video %}
+              <a class="button" href="{{ paper.video }}" target="_blank">Video</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- ========== EDUCATION ========== -->
+<div class="docs-section" id="education">
+  <h4>Education</h4>
+  {% for edu in site.data.education.educations %}
+    <div class="paper">
+      <p class="title">
+        <b>{{ edu.place }}</b>
+        <span class="edu-time">{{ edu.time }}</span>
+      </p>
+      <p>{{ edu.title }}</p>
+    </div>
+  {% endfor %}
+</div>

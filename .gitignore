@@ -1,0 +1,4 @@
+_site/
+.jekyll-cache/
+_preview/venv/
+.DS_Store

@@ -1,0 +1,10 @@
+papers:
+  - title: "[C1] Meta Inverse Prompting for Video Generative Models"
+    authors: "<b><u>Yerin Jung</u></b>, Jongheon Jeong"
+    venue: "Conference on Neural Information Processing Systems (NeurIPS), 2026"
+    # venue2: "Main Paper Track"
+    # paper_pdf: ""
+    arxiv: "https://arxiv.org/abs/2610.24965"
+    website: "https://ueriniuno.github.io/mvip-page/"
+    # code: ""
+    thumbnail: "/assets/publications/C1_2026_MVIP.png"
